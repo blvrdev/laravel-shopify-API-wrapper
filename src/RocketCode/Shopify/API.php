@@ -294,8 +294,8 @@ class API
                 continue;
             }
 
-            list($key, $val) = explode(':', $header);
-            $_INFO[trim($key)] = trim($val);
+            $parts = explode(': ', $header);
+            $_INFO[trim($parts[0])] = isset($parts[1]) ? trim($parts[1]) : null;
         }
 
 
